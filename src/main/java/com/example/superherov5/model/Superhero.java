@@ -69,6 +69,18 @@ public class Superhero {
             return superheroName;
         }
 
+    }
 
+    @Override
+    public String toString() {
+        return "Superhero{" +
+                "superheroID=" + superheroID +
+                ", superheroName='" + superheroName + '\'' +
+                ", realName='" + realName + '\'' +
+                ", creationYear=" + creationYear +
+                ", cityName='" + cityName + '\'' +
+                ", superpower='" + superpower + '\'' +
+                ", isHuman=" + isHuman +
+                '}';
     }
 }

@@ -55,7 +55,7 @@ public class SuperheroRepository implements iRepository {
         List<SuperheroDTO> superheroDTOList = new ArrayList<>();
 
         try (Connection con = DriverManager.getConnection(db_url, uid, pwd)) {
-            String SQL = "SELECT superheroName, realName, creationYear FROM Superhero WHERE superheroName = ?;";
+            String SQL = "SELECT superheroName, realName, creationYear, superpower FROM Superhero WHERE superheroName = ?;";
             PreparedStatement pstm = con.prepareStatement(SQL);
             pstm.setString(1, superheroName);
             ResultSet rs = pstm.executeQuery();
@@ -63,7 +63,8 @@ public class SuperheroRepository implements iRepository {
                 String superheroname = rs.getString("superheroname");
                 String realName = rs.getString("realName");
                 int creationYear = rs.getInt("creationYear");
-                superheroDTOList.add(new SuperheroDTO(superheroname, realName, creationYear));
+                String superpower = rs.getString("superpower");
+                superheroDTOList.add(new SuperheroDTO(superheroname, realName, creationYear, superpower));
             }
             return superheroDTOList;
         } catch (SQLException e) {

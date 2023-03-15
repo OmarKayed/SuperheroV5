@@ -27,7 +27,7 @@ public class ArrayRespository implements iRepository {
         for (SuperheroDTO superhero : superheroDTOArrayList) {
             String name = superhero.getSuperheroName().toLowerCase();
             if (name.contains(superheroName.toLowerCase())) {
-                superheroDTOArrayList.add(new SuperheroDTO(superhero.getSuperheroName(), superhero.getRealName(), superhero.getCreationYear()));
+                superheroDTOArrayList.add(new SuperheroDTO(superhero.getSuperheroName(), superhero.getRealName(), superhero.getCreationYear(), superhero.getSuperpower()));
             }
         }
         return superheroDTOArrayList;

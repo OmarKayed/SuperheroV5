@@ -8,11 +8,13 @@ public class SuperheroDTO {
     private String superheroName;
     private String realName;
     private int creationYear;
+    private String superpower;
 
-    public SuperheroDTO(String superheroName, String realName, int creationYear) {
+    public SuperheroDTO(String superheroName, String realName, int creationYear, String superpower) {
         this.superheroName = superheroName;
         this.realName = realName;
         this.creationYear = creationYear;
+        this.superpower = superpower;
     }
 
     public String getSuperheroName() {
@@ -25,5 +27,13 @@ public class SuperheroDTO {
 
     public int getCreationYear() {
         return creationYear;
+    }
+
+    public String getSuperpower() {
+        return superpower;
+    }
+
+    public void setSuperpower(String superpower) {
+        this.superpower = superpower;
     }
 }
