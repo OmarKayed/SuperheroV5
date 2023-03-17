@@ -3,6 +3,7 @@ package com.example.superherov5.service;
 import com.example.superherov5.dto.CityHeroDTO;
 import com.example.superherov5.dto.HeroPowerDTO;
 import com.example.superherov5.dto.SuperheroDTO;
+import com.example.superherov5.dto.SuperheroFormDTO;
 import com.example.superherov5.model.Superhero;
 import com.example.superherov5.repositories.SuperheroRepository;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,18 @@ public class SuperheroService {
 
     public List <CityHeroDTO> HeroFromCityWithName (String superheroName) {
         return superheroRepository.HeroFromCityWithName(superheroName);
+    }
+
+    public List<String> getSuperpower() {
+        return superheroRepository.getSuperpower();
+    }
+
+    public List<String> getCity(){
+        return superheroRepository.getCity();
+    }
+
+    public void addSuperHero(SuperheroFormDTO form) {
+        superheroRepository.addSuperHero(form);
     }
 
 }

@@ -3,14 +3,14 @@ package com.example.superherov5.controller;
 import com.example.superherov5.dto.CityHeroDTO;
 import com.example.superherov5.dto.HeroPowerDTO;
 import com.example.superherov5.dto.SuperheroDTO;
+import com.example.superherov5.dto.SuperheroFormDTO;
+import com.example.superherov5.repositories.SuperheroRepository;
 import com.example.superherov5.service.SuperheroService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -53,6 +53,22 @@ public class SuperheroController {
     public ResponseEntity<List<CityHeroDTO>> HeroFromCityWithName(@PathVariable String superheroName) {
         List<CityHeroDTO> superheroCitylist = superheroService.HeroFromCityWithName(superheroName);
         return new ResponseEntity<>(superheroCitylist, HttpStatus.OK);
+    }
+
+    @GetMapping(path = {"/add"})
+    public String addSuperhero (Model model) {
+        SuperheroFormDTO superheroFormDTO = new SuperheroFormDTO();
+        model.addAttribute("CreateSuperhero", superheroFormDTO);
+        model.addAttribute("city", superheroService.getCity());
+        model.addAttribute("power", superheroService.getSuperpower());
+        return "add";
+    }
+
+    @PostMapping(path ={"/add"})
+    public String returnSuperhero (@ModelAttribute("superhero") SuperheroFormDTO superheroFormDTO) {
+        superheroService.addSuperHero(superheroFormDTO);
+        System.out.println(superheroFormDTO.toString());
+    return "redirect:/superhelte";
     }
 
 }
