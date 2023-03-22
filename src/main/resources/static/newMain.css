@@ -1,0 +1,71 @@
+body {
+    max-width: 700px;
+    margin: auto;
+    background: #F5F5F5;
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px;
+}
+
+/* Use a more eye-catching font for headings */
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Add some subtle styling to labels */
+label {
+    width: 150px;
+    display: inline-block;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #444444;
+}
+
+/* Style the table to make it more modern and readable */
+table {
+    border-collapse: collapse;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+th {
+    font-weight: 600;
+    background-color: #F5F5F5;
+    border-top: 2px solid #E0E0E0;
+    color: #444444;
+}
+
+/* Add some visual interest to form inputs */
+select, input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Add some interactivity when hovering over form inputs */
+select:hover, input[type="text"]:hover, input[type="number"]:hover {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a border to every row in the table */
+tr {
+    border: 1px solid #E0E0E0;
+}
+
+/* Remove the border from the first row in the table */
+tr:first-child {
+    border-top: none;
+}
